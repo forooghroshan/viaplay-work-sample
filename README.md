@@ -53,3 +53,9 @@ TMDB_KEY = xxxxxxxxxxxxxxxxxxx
 ```
 node server.js
 ```
+## Handle Heavy Load
+
+#### Application Level
+In order to be able to handle heavy requests when the app is pushed to production, there are various rules and techniques which should be followed in the code and in the server configuration. Within the Code, all the functions should be asynchronous in order to do tasks simultaneously and reduce the Response times, the second rule is to have a proper exception handling in place which will stop the Application from crashing and causing heavy usage. Use Test-driven Development and functional programming Paradigms to have a more efficient code like what has been done in this project. Another good approach is to use Caching, which will help us to cache the request and tremendously reduce the response time, there are several Caching strategy which consists of Memory Caching, Memcached, Redis
+#### Server Level
+On the Server side, we can increase the RAM, configure Auto-Scaling so once the usage goes higher than a certain amount, the server can be scaled up. Place the server behind a Load Balancer to distribute Application traffic across our servers.
